@@ -13,13 +13,11 @@ const File = require('./src/file');
       const result =  File.csvToJson(filePath)
       await rejects(result,rejection)
     }
-   
+
    {
       const filePath = './mocks/trheeItens-valid.csv'
-      const filePath2 = './mocks/fourItens-invalid.csv'
       const rejection = new Error(error.FILE_LENGTH_ERROR_MESSAGE)
       const result =   await File.csvToJson(filePath)
-
       const expect = [
         {
           "name": "Erick",

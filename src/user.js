@@ -6,6 +6,5 @@ class User{
     this.profession = profession
     this.birthday = new Date().getFullYear() - age
   }
-
 }
 module.exports = User

@@ -9,13 +9,11 @@ class File{
   static async csvToJson(filePath){
     const content = await File.getFileContent(filePath)
     const validation =  File.isValid(content)
-    //console.log('valid',validation.valid)
     if(!validation.valid) throw new Error(validation.error)
     const users =  File.parseCSVToJSON(content)
     return users
   }
   static async getFileContent(filePath){
-
     return (await readFile(filePath)).toString()
   }
   static  isValid(csvString,options=DEFAULT_OPTION){
@@ -36,9 +34,8 @@ class File{
         error:error.FILE_LENGTH_ERROR_MESSAGE,
         valid:false
       }
-    }else{
-      return {valid:true}
     }
+      return {valid:true}
   }
   static parseCSVToJSON(csvString){
     const lines = csvString.split('\r\n')
@@ -55,6 +52,5 @@ class File{
     return users
   }
 }
-const name = "leo"
 
 module.exports = File

@@ -2,7 +2,7 @@ const { rejects, deepEqual } = require('assert');
 const {error} = require('./src/constants');
 const File = require('./src/file');
 (async ()=>{
- /* {  const filePath = './mocks/emptyfile-invalid.csv'
+  {  const filePath = './mocks/emptyfile-invalid.csv'
     const rejection = new Error(error.FILE_LENGTH_ERROR_MESSAGE)
     const result =  File.csvToJson(filePath)
     await rejects(result,rejection)
@@ -13,7 +13,7 @@ const File = require('./src/file');
       const result =  File.csvToJson(filePath)
       await rejects(result,rejection)
     }
-   */ 
+   
    {
       const filePath = './mocks/trheeItens-valid.csv'
       const filePath2 = './mocks/fourItens-invalid.csv'
@@ -41,6 +41,5 @@ const File = require('./src/file');
         }
       ]
      deepEqual(JSON.stringify(result),JSON.stringify(expect))
-     //console.log(result)
     }
 })()

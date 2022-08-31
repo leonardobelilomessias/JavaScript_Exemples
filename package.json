@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx mocha -w ./aula4_coverage_end_to_end/*.test.js",
+    "test:cov": "npx nyc mocha --parallel  ./aula4_coverage_end_to_end/*.test.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sinon": "^9.2.4"
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.4",
+    "supertest": "^6.2.4"
   }
 }
